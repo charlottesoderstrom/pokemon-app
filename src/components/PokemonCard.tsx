@@ -43,16 +43,16 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-gray-50 p-3 rounded-lg">
-            <p className="text-xs text-gray-600 font-semibold">Height</p>
-            <p className="text-xl font-bold text-gray-900">
+            <span className="text-xs text-gray-600 font-semibold">Height</span>
+            <div className="text-xl font-bold text-gray-900">
               {(pokemon.height / 10).toFixed(1)} m
-            </p>
+            </div>
           </div>
           <div className="bg-gray-50 p-3 rounded-lg">
-            <p className="text-xs text-gray-600 font-semibold">Weight</p>
-            <p className="text-xl font-bold text-gray-900">
+            <span className="text-xs text-gray-600 font-semibold">Weight</span>
+            <div className="text-xl font-bold text-gray-900">
               {(pokemon.weight / 10).toFixed(1)} kg
-            </p>
+            </div>
           </div>
         </div>
         <div>
@@ -81,9 +81,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
                 key={index}
                 className="bg-linear-to-r from-purple-100 to-pink-100 px-3 py-2 rounded-lg"
               >
-                <p className="text-sm font-medium text-gray-800">
+                <span className="text-sm font-medium text-gray-800">
                   {formatName(move.move.name)}
-                </p>
+                </span>
               </div>
             ))}
           </div>

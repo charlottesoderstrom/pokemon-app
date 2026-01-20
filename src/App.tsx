@@ -20,11 +20,9 @@ function App() {
         <div className="flex flex-col items-center">
           <SearchBar onSearch={handleSearch} />
           {!searchedPokemon && (
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-xl p-8 text-center">
-              <p className="text-xl text-gray-600">
-                Search for a Pokemon to get started!
-              </p>
-            </div>
+            <p className="text-xl text-white text-center">
+              Search for a Pokemon to get started!
+            </p>
           )}
           {isLoading && searchedPokemon && (
             <div className="bg-white rounded-lg shadow-xl p-8">
@@ -34,7 +32,7 @@ function App() {
           {error && searchedPokemon && (
             <div className="bg-red-100 border-2 border-red-400 rounded-lg shadow-xl p-8">
               <p className="text-xl text-red-800 font-semibold">
-                Pokemon not found! Try another name.
+                Pokémon not found! Try another name.
               </p>
             </div>
           )}
