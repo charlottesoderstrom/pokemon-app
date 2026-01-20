@@ -27,9 +27,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
           className="w-64 h-64 object-contain drop-shadow-2xl"
         />
       </div>
-      <div className="p-6 space-y-4">
-        <div>
-          <h3 className="text-sm font-semibold text-gray-600 mb-2">Type</h3>
+      <div className="p-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-sm font-semibold text-gray-600">Type</h3>
           <div className="flex gap-2">
             {pokemon.types.map((type, index) => (
               <span
@@ -42,23 +42,21 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="bg-gray-50 p-3 rounded-lg flex flex-col gap-1">
             <span className="text-xs text-gray-600 font-semibold">Height</span>
             <div className="text-xl font-bold text-gray-900">
               {(pokemon.height / 10).toFixed(1)} m
             </div>
           </div>
-          <div className="bg-gray-50 p-3 rounded-lg">
+          <div className="bg-gray-50 p-3 rounded-lg flex flex-col gap-1">
             <span className="text-xs text-gray-600 font-semibold">Weight</span>
             <div className="text-xl font-bold text-gray-900">
               {(pokemon.weight / 10).toFixed(1)} kg
             </div>
           </div>
         </div>
-        <div>
-          <h3 className="text-sm font-semibold text-gray-600 mb-2">
-            Abilities
-          </h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-sm font-semibold text-gray-600">Abilities</h3>
           <div className="flex flex-wrap gap-2">
             {pokemon.abilities.slice(0, 3).map((ability, index) => (
               <span
@@ -71,10 +69,8 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
             ))}
           </div>
         </div>
-        <div>
-          <h3 className="text-sm font-semibold text-gray-600 mb-2">
-            Sample Moves
-          </h3>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-sm font-semibold text-gray-600">Sample Moves</h3>
           <div className="grid grid-cols-2 gap-2">
             {pokemon.moves.slice(0, 4).map((move, index) => (
               <div
