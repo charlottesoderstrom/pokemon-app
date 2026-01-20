@@ -42,7 +42,7 @@ const fetchPokemon = async (name: string): Promise<Pokemon> => {
   );
 
   if (!response.ok) {
-    throw new Error('Pokemon not found');
+    throw new Error('Pokémon not found');
   }
 
   return response.json();
