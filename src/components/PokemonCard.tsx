@@ -1,39 +1,7 @@
+import type { Pokemon } from '../types/pokemon';
+
 interface PokemonCardProps {
-  pokemon: {
-    id: number;
-    name: string;
-    height: number;
-    weight: number;
-    sprites: {
-      front_default: string;
-      other: {
-        'official-artwork': {
-          front_default: string;
-        };
-      };
-    };
-    types: Array<{
-      slot: number;
-      type: {
-        name: string;
-        url: string;
-      };
-    }>;
-    abilities: Array<{
-      ability: {
-        name: string;
-        url: string;
-      };
-      is_hidden: boolean;
-      slot: number;
-    }>;
-    moves: Array<{
-      move: {
-        name: string;
-        url: string;
-      };
-    }>;
-  };
+  pokemon: Pokemon;
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
@@ -63,9 +31,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
         <div>
           <h3 className="text-sm font-semibold text-gray-600 mb-2">Type</h3>
           <div className="flex gap-2">
-            {pokemon.types.map(type => (
+            {pokemon.types.map((type, index) => (
               <span
-                key={type.slot}
+                key={index}
                 className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-semibold uppercase"
               >
                 {type.type.name}
@@ -92,9 +60,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
             Abilities
           </h3>
           <div className="flex flex-wrap gap-2">
-            {pokemon.abilities.slice(0, 3).map(ability => (
+            {pokemon.abilities.slice(0, 3).map((ability, index) => (
               <span
-                key={ability.slot}
+                key={index}
                 className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-medium"
               >
                 {formatName(ability.ability.name)}
