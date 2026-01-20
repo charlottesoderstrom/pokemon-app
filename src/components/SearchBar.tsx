@@ -94,7 +94,10 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
               {filteredSuggestions.map((pokemon, index) => (
                 <li
                   key={pokemon}
-                  onClick={() => handleSuggestionClick(pokemon)}
+                  onMouseDown={e => {
+                    e.preventDefault();
+                    handleSuggestionClick(pokemon);
+                  }}
                   className={`px-4 py-2 cursor-pointer capitalize hover:bg-yellow-100 transition-colors ${
                     index === selectedIndex ? 'bg-yellow-200' : ''
                   } ${index === 0 ? 'rounded-t-lg' : ''} ${
